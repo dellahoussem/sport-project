@@ -431,6 +431,24 @@ app.post("/teamTest",(req,res)=> {
 });
 
 
+app.post('/matches/search', (req, res) => {
+  console.log('business logic: search match', req.body);
+
+  match.find({
+    $or: [
+      { teamOne: req.body.team },
+      { teamTwo: req.body.team }
+    ]
+  }).then((matches) => {
+    if (matches.length === 0) {
+      return res.json({ msg: 'No match found' });
+    }
+    res.json({ matches });
+  }).catch(err => {
+    res.json({ msg: 'Error', error: err });
+  });
+});
+
 
 //make app importable from another files
 module.exports = app;

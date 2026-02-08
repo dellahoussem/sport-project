@@ -29,6 +29,8 @@
                                 </div>
                             </div>
                         </li>
+                        <li *ngIf="isloggedIn()"><a routerLink="searchMatche" class="nav-link">Search Matche</a></li>
+                        <li *ngIf="isloggedIn()"><a routerLink="weather" class="nav-link">Weather</a></li>
                         <li *ngIf="!isloggedIn()"><a routerLink="signup" class="nav-link">Signup</a></li>
                         <li *ngIf="!isloggedIn()"><a routerLink="signin" class="nav-link">Login</a></li>
                          <li *ngIf="isloggedIn()"><a routerLink="signin" class="nav-link">welcome {{user.fName}} {{user.lName}}</a></li>

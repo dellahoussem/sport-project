@@ -20,6 +20,7 @@ import { EditPlayerComponent } from './component/edit-player/edit-player.compone
 import { PlayerInfoComponent } from './component/player-info/player-info.component';
 import { AddStadiumComponent } from './component/add-stadium/add-stadium.component';
 import { WeatherComponent } from './component/weather/weather.component';
+import { SearchMatcheComponent } from './component/search-matche/search-matche.component';
 
 export const routes: Routes = [
     { path: "", component: HomeComponent },
@@ -42,4 +43,5 @@ export const routes: Routes = [
       { path: "playerInfo/:id", component: PlayerInfoComponent },
       { path: "addStadium", component: AddStadiumComponent },
       { path: "weather", component: WeatherComponent },
+      { path: "searchMatche", component: SearchMatcheComponent },
 ];

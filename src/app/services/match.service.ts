@@ -38,6 +38,10 @@ export class MatchService {
     return this.httpClient.put<{msg : string , isUpdate : boolean}>(this.matchURL,obj);
   }
  
-
+searchMatch(obj: any) {
+  return this.httpClient.post<{ matches?: any[], msg?: string }>(this.matchURL + '/search',
+    obj
+  );
+}
 
 }
