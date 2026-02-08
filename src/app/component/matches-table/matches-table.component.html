@@ -1,0 +1,37 @@
+<input type="text" class="form-control mb-3" placeholder="Rechercher une équipe..." [(ngModel)]="search">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">S1</th>
+      <th scope="col">S2</th>
+      <th scope="col">T1</th>
+      <th scope="col">T2</th>
+      <th scope="col">Discription</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let elt of matchesTab | myFilter:search">
+      <td>{{elt._id}}</td>
+      <td>{{elt.scoreOne}}</td>
+      <td>{{elt.scoreTwo}}</td>
+      <td>{{elt.teamOne}}</td>
+      <td>{{elt.teamTwo}}</td>
+      <td [ngClass]="{
+                            red:elt.scoreOne<elt.teamTwo,
+                            blue:elt.scoreOne==elt.scoreTwo,
+                            green:elt.scoreOne>elt.scoreTwo,
+
+                        }
+                        ">
+        {{discriptionMatch(elt)}}</td>
+      <td>
+        <button type="button" class="btn btn-info mr-3" (click)="goToInfo(elt._id)">Info</button>
+        <button type="button" class="btn btn-warning mr-3" (click)="goToEdit(elt._id)">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="delete(elt._id)">Delete</button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

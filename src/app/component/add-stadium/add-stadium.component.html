@@ -1,0 +1,47 @@
+<div class="hero overlay" style="background-image: url('images/bg_3.jpg');">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9 mx-auto text-center">
+        <h1 class="text-white">Add Studium</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="site-section ">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <form #statiumForm="ngForm" (ngSubmit)="addStadium()">
+          <div class="form-group">
+            <input type="text" [(ngModel)]="obj.name" name="name" class="form-control" placeholder="name" required #nameCtrl="ngModel">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" [(ngModel)]="obj.country" name="contry" class="form-control" placeholder="contry"
+              required>
+          </div>
+          
+          <div class="form-group">
+            <input type="number" [(ngModel)]="obj.capacity" name="capacity" class="form-control" placeholder="capacity"
+              required>
+          </div>
+         
+             
+          <div class="form-group">
+            <select name="selectedTeamId" class="form-control" id="" [(ngModel)]="obj.teamId">
+              <option *ngFor="let team of teams" style="color: black;" [value]="team._id">
+                {{team.name}}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary py-3 px-5" value="Add" [disabled]="statiumForm.invalid">
+          </div>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>

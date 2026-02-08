@@ -1,0 +1,45 @@
+import { Routes } from '@angular/router';
+import { HomeComponent } from './component/home/home.component';
+import { LoginComponent } from './component/login/login.component';
+import { SignupComponent } from './component/signup/signup.component';
+import { MatchComponent } from './component/match/match.component';
+import { PlayerComponent } from './component/player/player.component';
+import { TeamComponent } from './component/team/team.component';
+import { AddMatchComponent } from './component/add-match/add-match.component';
+import { AddPlayerComponent } from './component/add-player/add-player.component';
+import { AddTeamComponent } from './component/add-team/add-team.component';
+import { MatchesComponent } from './component/matches/matches.component';
+import { AdminComponent } from './component/admin/admin.component';
+import { MatchInfoComponent } from './component/match-info/match-info.component';
+import { EditMatcheComponent } from './component/edit-matche/edit-matche.component';
+import { PlayersComponent } from './component/players/players.component';
+import { TeamsComponent } from './component/teams/teams.component';
+import { TeamInfoComponent } from './component/team-info/team-info.component';
+import { EditTeamComponent } from './component/edit-team/edit-team.component';
+import { EditPlayerComponent } from './component/edit-player/edit-player.component';
+import { PlayerInfoComponent } from './component/player-info/player-info.component';
+import { AddStadiumComponent } from './component/add-stadium/add-stadium.component';
+import { WeatherComponent } from './component/weather/weather.component';
+
+export const routes: Routes = [
+    { path: "", component: HomeComponent },
+    { path: "signin", component: LoginComponent },
+    { path: "signupAdmin", component: SignupComponent },
+     { path: "signupOwner", component: SignupComponent },
+      { path: "signup", component: SignupComponent },
+    { path: "addMatch", component: AddMatchComponent },
+    { path: "addPlayer", component: AddPlayerComponent },
+    { path: "addTeam", component: AddTeamComponent },
+    { path: "matches", component: MatchesComponent },
+    { path: "admin", component: AdminComponent },
+    { path: "matcheInfo/:id", component: MatchInfoComponent },
+    { path: "editMatche/:id", component: EditMatcheComponent },
+    { path: "editTeam/:id", component: EditTeamComponent },
+     { path: "editPlayer/:id", component: EditPlayerComponent },
+    { path: "players", component: PlayersComponent },
+    { path: "teams", component: TeamsComponent },
+    { path: "teamInfo/:id", component: TeamInfoComponent },
+      { path: "playerInfo/:id", component: PlayerInfoComponent },
+      { path: "addStadium", component: AddStadiumComponent },
+      { path: "weather", component: WeatherComponent },
+];
